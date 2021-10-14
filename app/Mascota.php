@@ -30,8 +30,9 @@ class Mascota extends Model
         'id_especie'
     ];
 
-    public function especie(){
-        return $this->belongsTo(Especie::class, 'id_epecie','id_especie');
+    public function especie()
+    {
+        return $this->belongsTo(Especie::class, 'id_especie','id_especie');
     }
 }
     
