@@ -18,3 +18,5 @@ Route::apiResource('apiMascota','MascotaController');
 
 Route::apiResource('apiEspecie', 'EspecieController');
 
+Route::apiResource('apiPropietario', 'PropietarioController');
+
