@@ -13,7 +13,7 @@ class Mascota extends Model
     protected $primaryKey='id_mascota';
 
     //especificar las relaciones
-    public $with=['especie'];
+    public $with=['especie','raza'];
 
     //solo si la PK sea numerica, si no es numerica se coloca false
     public $incrementing=true;
@@ -27,12 +27,18 @@ class Mascota extends Model
         'genero',
         'peso',
         'id_propietario',
-        'id_especie'
+        'id_especie',
+        'id_razas'
+
     ];
 
     public function especie()
     {
         return $this->belongsTo(Especie::class, 'id_especie','id_especie');
+    }
+
+    public function raza(){
+        return $this->belongsTo(Raza::class, 'id_razas', 'id_razas');
     }
 }
     
