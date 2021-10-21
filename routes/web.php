@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 Route::apiResource('apiMascota','MascotaController');
 
@@ -21,5 +21,7 @@ Route::apiResource('apiEspecie', 'EspecieController');
 Route::apiResource('apiPropietario', 'PropietarioController');
 
 Route::apiResource('apiRaza', 'RazaController');
+
+Route::post('validar','AccesoController@validar');
 
 
