@@ -13,7 +13,7 @@
     <div id="miPagina">
         <div class="row">
             <div class="col-md-4 mt-3">
-                <input type="text" placeholder="Nombre" class="form-control" v-model="nombre">
+                <input type="text" placeholder="Nombre" class="form-control" v-model="nombre" ref="nombre">
             </div>
 
             <div class="col-md-4 mt-3">
@@ -40,7 +40,7 @@
                 <button class="btn btn-warning" @click="guardarEdicion()" v-if="editando==1">Actualizar</button>
 
                 <div class="col-md-4">
-                    <button class="btn btn-info">Cancelar</button>
+                    <button class="btn btn-info" @click="cancelar()">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -81,6 +81,7 @@
 
     <script src="propietarios.js"></script>
     <script src="vue.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
     
 </body>
 </html>

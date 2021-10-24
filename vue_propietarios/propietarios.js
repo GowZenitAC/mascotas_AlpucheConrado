@@ -28,15 +28,36 @@ new Vue({
     //methods permite crear funciones/procedimientos
     methods:{
 
-        agregarPropietario:function(){
+        agregarPropietario:function(){  
+            if(this.nombre && this.apellidoP && this.apellidoP && this.apellidoM && this.genero){
 
-            //se construye un objeto tipo mascota para insertar los datos en el array
+           //se construye un objeto tipo mascota para insertar los datos en el array
             var unPropietario={nombre:this.nombre,apellidoP:this.apellidoP,apellidoM:this.apellidoM,genero:this.genero}
+            
             //Agregamos un objeto propietario
             this.propietarios.push(unPropietario);
             this.limpiarHtml(); 
 
-        },
+              //enviamos el foco al primer componente al html/nombre de la mascota, se debe agregar a todas las interfaces
+      this.$refs.nombre.focus(); 
+            //aca agregamos el mensaje de exito
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Se ha guardado exitosamente',
+        showConfirmButton: false,
+        timer: 2000
+      })
+    }
+    else{
+        Swal.fire({
+            position: 'top end',
+            icon:'error',
+            title: 'Debe capturar todo los datos',
+            showConfirmButton: false,
+            timer: 2000
+         });
+    }},
         limpiarHtml:function(){
             this.nombre='';
             this.apellidoP='';
@@ -52,7 +73,7 @@ new Vue({
         editarPropietario:function(pos){
             this.nombre=this.propietarios[pos].nombre;
             this.apellidoP=this.propietarios[pos].apellidoP;
-            this.apellidoM=this.propietario[pos].apellidoM;
+            this.apellidoM=this.propietarios[pos].apellidoM;
             this.genero=this.propietarios[pos].genero;
             this.editando=1;
             this.indice=pos;
@@ -75,7 +96,7 @@ new Vue({
         editarPropietario:function(pos){
             this.nombre=this.propietarios[pos].nombre;
             this.apellidoP=this.propietarios[pos].apellidoP;
-            this.apellidoM=this.propietario[pos].apellidoM;
+            this.apellidoM=this.propietarios[pos].apellidoM;
             this.genero=this.propietarios[pos].genero;
             this.editando=1;
             this.indice=pos;
