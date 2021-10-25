@@ -27,7 +27,7 @@
             <div class="col-md-4 mt-3">
                 <select class="form-control" v-model="genero">
                     <option disabled="">Elija un genero</option>
-                    <option v-for="g in genero" v-bind:value="g.genero">{{g.nombre}}</option>
+                    <option v-for="g in generos" v-bind:value="g.nombre">{{g.nombre}}</option>
                 </select>
             </div>
 
@@ -40,7 +40,12 @@
                 <button class="btn btn-warning" @click="guardarEdicion()" v-if="editando==1">Actualizar</button>
 
                 <div class="col-md-4">
-                    <button class="btn btn-info" @click="cancelar()">Cancelar</button>
+                    <button class="btn btn-info" @click="cancelar()">Cancelar</button>               
+                </div>
+                <div class="row pt-2">
+                    <div class="col-md-8">
+                        <input type="text" placeholder="Escriba el nombre de el propietario" class="form-control" v-model="buscar">
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,7 +62,7 @@
             </thead>
 
             <tbody>
-                <tr v-for="(pro,index) in propietarios">
+                <tr v-for="(pro,index) in filtroPropietarios">
                     <td>{{index}}</td>
                     <td>{{pro.nombre}}</td>
                     <td>{{pro.apellidoP}}</td>
@@ -72,6 +77,11 @@
             </tbody>
 
         </table>
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Tenemos: {{numeroPropietarios}} Propietarios</h3>
+            </div>
+        </div>
 
     </div>
     <!--Fin de Vue-->

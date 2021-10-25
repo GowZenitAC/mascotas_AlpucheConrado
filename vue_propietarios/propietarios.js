@@ -17,10 +17,10 @@ new Vue({
                     {nombre:'Maria', apellidoP:'Mata', apellidoM:'Lozano', genero:'Femenino'},
                     {nombre:'Karla', apellidoP:'Zapata', apellidoM:'Obrador', genero:'Femenino'}],
 
-        genero:[
+        generos:[
 
                 {clave:1,nombre:'Masculino'},
-                {clave:1,nombre:'Femenino'},
+                {clave:2,nombre:'Femenino'},
 
                 ],
     },
@@ -102,5 +102,21 @@ new Vue({
             this.indice=pos;
         },
 
+    },
+    //fin de la seccion methods
+
+    //seccion automatica(Calcular valores automaticamente)
+    computed:{
+        numeroPropietarios:function(){
+            var num=0;
+            num=this.propietarios.length;
+            return num;
+        },
+        filtroPropietarios:function(){
+            return this.propietarios.filter((propietario)=>{
+                return propietario.nombre.toLowerCase().match(this.buscar.toLowerCase().trim()) ||
+                propietario.apellidoP.toLowerCase().match(this.buscar.toLowerCase().trim())
+            });
+        }
     }
 })
