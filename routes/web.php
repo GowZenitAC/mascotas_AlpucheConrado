@@ -34,5 +34,8 @@ Route::get('Desencriptar', function(){
 });
 
 Route::post('validar','AccesoController@validar');
-
+ 
+Route::get('mascotas', function () {
+    return view('mascotas');
+});
 

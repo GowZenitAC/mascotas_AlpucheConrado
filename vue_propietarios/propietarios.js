@@ -58,6 +58,7 @@ new Vue({
             timer: 2000
          });
     }},
+    
         limpiarHtml:function(){
             this.nombre='';
             this.apellidoP='';
