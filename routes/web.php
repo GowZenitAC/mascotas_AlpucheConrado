@@ -38,4 +38,9 @@ Route::post('validar','AccesoController@validar');
 Route::get('mascotas', function () {
     return view('mascotas');
 });
-
+Route::get('especies', function () {
+    return view('especies');
+});
+Route::get('propietarios', function () {
+    return view('propietarios');
+});

@@ -3,3 +3,7 @@
 @section('contenido')
     <h1>Hola Mundo</h1>
 @endsection
+
+@push('scripts')
+<script src="{{asset('js/apis/mascotas.js')}}"></script>
+@endpush
