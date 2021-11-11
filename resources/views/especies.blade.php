@@ -17,7 +17,7 @@
                                     <td>@{{especie.id_especie}}</td>
                                     <td>@{{especie.especie}}</td>
                                     <td>
-                                        <button class="btn btn-primary">ELIMINAR</button>
+                                        <button class="btn btn-primary" @click="eliminarEspecie(especie.id_especie )">ELIMINAR</button>
                                         <button class="btn btn-danger">EDITAR</button>
                                     </td>
                                 </tr>

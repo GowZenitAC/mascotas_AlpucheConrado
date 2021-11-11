@@ -4,6 +4,12 @@ function init(){
 var apiEspecie = 'http://localhost/mascotas_Alpuche/public/apiEspecie';
 
 new Vue({
+    //Asignamos el token
+    http: {
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('#token').getAttribute('value')
+        }
+    },
     el:'#apiEspecies',
 
     data:{
@@ -19,9 +25,17 @@ new Vue({
 
     //INICIO DE METHODS
     methods:{
+        //obtiene el listado de todas las especies
         getEspecies:function(){
             this.$http.get(apiEspecie).then(function(json){
                 this.especies=json.data;
+            })
+        },
+        eliminarEspecie:function(id){
+            this.$http.delete(apiEspecie + '/' + id).then(function(json){
+                this.getEspecies();
+            }).catch(function(json){
+                console.log(json);
             })
         }
     },
