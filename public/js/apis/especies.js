@@ -32,11 +32,29 @@ new Vue({
             })
         },
         eliminarEspecie:function(id){
-            this.$http.delete(apiEspecie + '/' + id).then(function(json){
-                this.getEspecies();
-            }).catch(function(json){
-                console.log(json);
-            })
+
+            Swal.fire({
+                title: '¿Estás seguro de eliminar?',
+                text: "No podras deshacer los cambios!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, quiero eliminar!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    this.$http.delete(apiEspecie + '/' + id).then(function(json){
+                        this.getEspecies();
+                    }).catch(function(json){
+                        console.log(json);
+                    })
+                  Swal.fire(
+                    'Eliminado!',
+                    'Tu mascota fue eliminada.',
+                    'success'
+                  )
+                }
+              })
         }
     },
     //FIN DE METHODS
