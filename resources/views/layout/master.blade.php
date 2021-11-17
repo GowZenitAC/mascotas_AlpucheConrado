@@ -275,6 +275,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 
+<script src=""></script>
+
 <script src="{{asset('js/sweetalert2.all.min.js')}}"></script>
 </body>
 </html>

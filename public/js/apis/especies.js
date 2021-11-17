@@ -55,6 +55,10 @@ new Vue({
                   )
                 }
               })
+        },
+        //Fin del metodo eliminar
+        mostrarModal:function(){
+            $('#modalEspecies').modal('show');
         }
     },
     //FIN DE METHODS
