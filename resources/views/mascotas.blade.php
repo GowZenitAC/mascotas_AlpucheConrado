@@ -82,8 +82,9 @@
           </option>
         </select><br>
 
-        <select name="" id="" class="form-control">
+        <select class="form-control" v-model="id_raza">
           <option value="" disbled="">Selecciona una raza</option>
+          <option value="" v-for="raza in razas" v-bind:value="id_raza">@{{raza.raza}}</option>
         </select>
       </div>
       <div class="modal-footer">

@@ -13,12 +13,15 @@ new Vue({
     data:{
         prueba:'ESTA ES UNA PRUEBA',
         mascotas:[], //aca se va a recibir el array de las mascotas 
+        especies:[],
+        razas:[],
         nombre:'',
         peso:'',
         genero:'',
         agregando:true,
         id_mascota:'',
         id_especie:'',
+        id_raza:'',
 
         cantidad:1,
         precio:0,
@@ -115,7 +118,7 @@ new Vue({
             //console.log(id_especie);
 
             this.$http.get(ruta + '/getRazas/' + id_especie).then(function(json){
-                
+                this.razas=json.data;
             });
        }
     },

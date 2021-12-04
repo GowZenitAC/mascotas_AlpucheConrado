@@ -1,6 +1,6 @@
 <?php
 
-use DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +23,8 @@ Route::apiResource('apiEspecie', 'EspecieController');
 Route::apiResource('apiPropietario', 'PropietarioController');
 
 Route::apiResource('apiRaza', 'RazaController');
+
+Route::apiResource('apiProducto', 'ProductoController');
 
 Route::get('prueba', function(){
     //return base64_encode('HOLA');
@@ -49,3 +51,9 @@ Route::get('getRazas/{id_especie}', [
     'as' => 'getRazas',
     'uses' => 'EspecieController@getRazas'
 ]);
+
+Route::get('ventas', function () {
+    return view('ventas');
+});
+
+
