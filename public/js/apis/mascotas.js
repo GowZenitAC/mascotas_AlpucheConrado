@@ -31,6 +31,7 @@ new Vue({
     
     created:function(){
         this.getMascotas();
+        this.getEspecies();
     },
 
     //inician los metodos

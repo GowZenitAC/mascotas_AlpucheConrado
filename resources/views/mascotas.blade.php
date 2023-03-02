@@ -42,9 +42,11 @@
                             <td>@{{mascota.nombre}}</td>
                             <td>@{{mascota.genero}}</td>
                             <td>@{{mascota.peso}} kg</td>
-                            <td>@{{mascota.especie.especie}}</td>
+                          
+                            
+                            <td>@{{mascota.especie.especie}}</td>-->
                             <td>
-                                <button class="btn  btn-sm" @clicl=editandoMascota(mascota.id_mascota)><i class="fas fa-pen"></i></button>
+                                <button class="btn  btn-sm" @click=editandoMascota(mascota.id_mascota)><i class="fas fa-pen"></i></button>
                                 <button class="btn btn-sm" @click="eliminarMascota(mascota.id_mascota)"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>

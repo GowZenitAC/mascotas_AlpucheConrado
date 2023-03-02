@@ -43,7 +43,7 @@ class MascotaController extends Controller
         $mascota->nombre=$request->get('nombre');
         $mascota->genero=$request->get('genero');
         $mascota->peso=$request->get('peso');
-
+        $mascota->especie->get('especie');
         $mascota->save();   
     }
 
